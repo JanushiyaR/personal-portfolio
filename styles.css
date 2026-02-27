@@ -153,6 +153,21 @@ a {
   overflow: hidden;
 }
 
+/* subtle data/technology animation layer */
+.hero-data-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(43,174,102,0.4) 1px, transparent 1px) 0 0/18px 18px;
+  opacity: 0.12;
+  pointer-events: none;
+  animation: moveData 60s linear infinite;
+}
+
+@keyframes moveData {
+  from { background-position: 0 0; }
+  to { background-position: 180px 0; }
+}
+
 .hero::before {
   content: "";
   position: absolute;
