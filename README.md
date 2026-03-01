@@ -2,12 +2,47 @@
 
 This is a simple, single-page personal portfolio site for **Janushiya Rajakumar**, an aspiring Data Engineer with a strong foundation in data science.
 
+## 🌐 Live Portfolio
+
+**Visit the live portfolio:** https://janushiyar.github.io/personal-portfolio/
+
+The site is fully responsive and works seamlessly on desktop and mobile devices.
+
 The stack is intentionally lightweight:
 
 - **HTML5** for structure (`index.html`)
 - **CSS3** for styling (`styles.css`)
+- **Vanilla JavaScript** for mobile menu and form handling
+- **EmailJS** for contact form submissions
+- **Font Awesome 6.5** for icons
+- **Google Fonts** (Poppins & Space Grotesk)
 
 No build tools or frameworks are required.
+
+## ✨ Features
+
+- ✅ **Fully responsive** – optimized for mobile, tablet, and desktop
+- ✅ **Mobile-friendly navigation** – hamburger menu with smooth animations
+- ✅ **Working contact form** – email submissions via EmailJS
+- ✅ **Smooth scroll animations** – reveal effects on page load and scroll
+- ✅ **Accessible design** – semantic HTML, ARIA labels, keyboard navigation
+- ✅ **Fast & lightweight** – minimal dependencies, excellent performance
+
+## 📧 Contact Form Setup
+
+The contact form uses **EmailJS** to send messages to your inbox:
+
+1. Sign up at [EmailJS](https://www.emailjs.com/) (free tier available).
+2. Create an email service and template with variables: `{{name}}`, `{{email}}`, `{{message}}`.
+3. Get your **User ID**, **Service ID**, and **Template ID** from the dashboard.
+4. Update these in `index.html` (lines ~769–784):
+
+   ```js
+   emailjs.init('YOUR_USER_ID');
+   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
+   ```
+
+Visitors can now send you messages directly through the portfolio.
 
 ## Running the site
 
