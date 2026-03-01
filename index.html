@@ -27,6 +27,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -37,6 +38,10 @@
             <span class="brand-role">Aspiring Data Engineer</span>
           </span>
         </a>
+        <!-- hamburger button shown on narrow viewports -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <nav class="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
@@ -694,10 +699,13 @@
             </div>
           </div>
 
-          <form class="contact-form" action="mailto:rajakumarjanu@gmail.com" method="post">
+          <!-- form using EmailJS (client-side email service) -->
+          <!-- signup at https://www.emailjs.com/ to get your user ID, service ID and template ID -->
+          <form id="contact-form" class="contact-form" novalidate>
+            <!-- after signup, replace the placeholders in the script below -->
             <div class="form-row">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" />
+              <input id="name" name="name" type="text" placeholder="Your name" required />
             </div>
             <div class="form-row">
               <label for="email">Email</label>
@@ -706,6 +714,7 @@
                 name="email"
                 type="email"
                 placeholder="you@example.com"
+                required
               />
             </div>
             <div class="form-row">
@@ -715,15 +724,69 @@
                 name="message"
                 rows="4"
                 placeholder="Tell me about your project or opportunity..."
+                required
               ></textarea>
             </div>
             <button class="btn btn-primary" type="submit">
               Send Message
             </button>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
           </form>
         </div>
       </section>
     </main>
+
+    <script>
+      // mobile navigation toggle with body lock and icon swap
+      const toggleButton = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const body = document.body;
+
+      function updateToggleIcon(open) {
+        toggleButton.innerHTML = open
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+      }
+
+      toggleButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        body.classList.toggle('menu-open', isOpen);
+        updateToggleIcon(isOpen);
+      });
+
+      // close navigation after clicking a link (optional)
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          body.classList.remove('menu-open');
+          updateToggleIcon(false);
+        });
+      });
+    </script>
+
+    <script>
+      // initialize EmailJS with your public key
+      emailjs.init('Yn_b6JTEu91NFIWlL');
+
+      const contactForm = document.getElementById('contact-form');
+      const statusEl = document.getElementById('form-status');
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        statusEl.textContent = 'Sending...';
+
+        // send using your EmailJS service and template
+        emailjs.sendForm('service_oxknoeb', 'template_k3zcfwg', this)
+          .then(() => {
+            statusEl.textContent = 'Thank you! Your message has been sent.';
+            contactForm.reset();
+          }, (err) => {
+            console.error('EmailJS error', err);
+            statusEl.textContent =
+              'Oops! There was a problem sending your message.';
+          });
+      });
+    </script>
 
     <footer class="site-footer">
       <div class="container footer-layout">

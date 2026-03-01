@@ -120,6 +120,52 @@ a {
   font-size: 0.9rem;
 }
 
+/* mobile hamburger toggle button (hidden by default) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* when navigation is open on mobile, show as vertical list */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bg);
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* mobile hamburger toggle button (hidden by default) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+/* when navigation is open on mobile, show as vertical list */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--bg);
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .nav-links a {
   position: relative;
   padding-bottom: 0.2rem;
@@ -998,6 +1044,13 @@ h1 {
   font-size: 0.88rem;
   outline: none;
   transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.form-status {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
   background: rgba(255, 255, 255, 0.95);
 }
 
@@ -1065,8 +1118,37 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
   .nav-links {
     display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    /* slide-in panel */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg);
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+    z-index: 30;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .nav-links.open a {
+    padding: 0.8rem 0;
   }
 
   .social-bar {
@@ -1075,6 +1157,77 @@ h1 {
 
   .hero {
     padding-top: 3.2rem;
+  }
+
+  /* reposition about photo on mobile: float on left with text wrap */
+  .about-photo-wrap {
+    justify-content: flex-start;
+    margin-top: 0;
+    order: 0;
+    float: left;
+    margin: 0 1rem 1rem 0;
+  }
+
+  .two-column {
+    display: block;
+  }
+
+  /* optionally hide profile image on small screens */
+  .about-photo-wrap {
+    display: none;
+  }
+
+  .about-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* timeline layout for smaller screens */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    display: block;
+    padding-left: 0;
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ensure period and location sit at opposite ends */
+  .timeline-period {
+    flex: 1;
+  }
+
+  .timeline-location {
+    flex: 1;
+    text-align: right;
+  }
+
+  .timeline-meta::before {
+    display: none;
+  }
+
+  .timeline-meta-logo img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .timeline-content {
+    padding-left: 0;
   }
 
   .hero-layout {
@@ -1118,5 +1271,27 @@ h1 {
   .container {
     padding-inline: 1.2rem;
   }
-}
 
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* tighten timeline spacing on very small screens */
+  .timeline {
+    gap: 1.2rem;
+  }
+}
