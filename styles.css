@@ -729,6 +729,53 @@ h1 {
   text-align: justify;
 }
 
+.dashboard-embed {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0.8rem 0;
+  background: #f4f4f4;
+}
+
+.dashboard-embed iframe {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 280px;
+}
+
+.dashboard-card {
+  padding: 1.2rem 1.3rem 1.3rem;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+}
+
+.dashboard-card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.dashboard-card .dashboard-embed {
+  margin: 1rem 0;
+}
+
+.dashboard-card .project-tech {
+  margin-top: 0.8rem;
+}
+
+.dashboard-card .project-links {
+  margin-top: 0.8rem;
+}
+
+.dashboard-card .tech-tags span {
+  font-size: 0.78rem;
+  padding: 0.22rem 0.65rem;
+}
+
 .project-tech {
   margin-top: 0.8rem;
   display: flex;
@@ -736,10 +783,6 @@ h1 {
   gap: 0.4rem;
   align-items: flex-start;
   font-size: 0.8rem;
-}
-
-.project-card {
-  /* no special positioning required now; normal flow used */
 }
 
 .project-links {
@@ -1053,8 +1096,6 @@ h1 {
   font-size: 0.9rem;
   color: var(--text-main);
 }
-  background: rgba(255, 255, 255, 0.95);
-}
 
 .form-row textarea {
   border-radius: 12px;
@@ -1258,6 +1299,12 @@ h1 {
 
   .nav-container {
     padding-inline: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-embed iframe {
+    height: 220px;
   }
 }
 
