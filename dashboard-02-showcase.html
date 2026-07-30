@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix & Spotify Dashboard Story</title>
+    <meta
+      name="description"
+      content="A polished storyboard for the Netflix & Spotify Power BI dashboard, showcasing its overview, Netflix insights, Spotify insights, and tooltip interactions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="showcase-page">
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="index.html#hero" class="brand">
+          <span class="brand-text">
+            <span class="brand-name">Janushiya&nbsp;Rajakumar</span>
+            <span class="brand-role">Aspiring Data Engineer</span>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#dashboards">Dashboards</a>
+          <a href="index.html#certifications">Certifications</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="showcase-shell">
+      <section class="showcase-hero">
+        <div class="container showcase-hero-grid">
+          <div class="showcase-hero-copy">
+            <p class="eyebrow">Power BI • Data storytelling • Interactive analytics</p>
+            <h1>Netflix & Spotify Streaming Analysis</h1>
+            <p class="showcase-intro">
+              This dashboard blends two entertainment datasets into a polished story of
+              content release trends, audience behavior, and music characteristics. It is
+              designed to guide viewers from an executive overview to deeper exploration
+              through context-rich tooltips and interactive filters.
+            </p>
+            <div class="showcase-pills">
+              <span>Power BI</span>
+              <span>Tooltip design</span>
+              <span>Data analysis</span>
+              <span>Interactive storytelling</span>
+            </div>
+            <div class="showcase-hero-actions">
+              <a class="btn btn-primary" href="Dashboard 02/Netflix_Spotify.pbix" download>
+                Download Power BI File
+              </a>
+            </div>
+          </div>
+          <div class="showcase-hero-card">
+            <img src="Dashboard 02/home.png" alt="Dashboard overview page for Netflix and Spotify insights" />
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section">
+        <div class="container">
+          <div class="showcase-section-heading">
+            <h2> Main pages connected as a guided story</h2>
+          </div>
+          <div class="story-flow">
+            <article class="story-step story-step-left">
+              <div class="story-media">
+                <img src="Dashboard 02/Netflix Page 1.png" alt="Netflix dashboard page one — Movie Overview" />
+              </div>
+              <div class="story-copy">
+                <h3>Netflix Dashboard - Page 1: Movie Overview</h3>
+                <ul>
+                  <li><strong>KPI Cards (5)</strong> — Count of Movies, Total Tmdb Score, Total Tmdb Popularity, Total Imdb Score, Count of Characters</li>
+                  <li><strong>Treemap</strong> — Movie Count by Age Certification (TV-Y7, TV-Y, TV-MA, PG, G, TV-PG, TV-14, PG-13, TV-G, R)</li>
+                  <li><strong>Pie/Donut Chart</strong> — Movie Count by Role (Actor vs Director split — 93.97% Actor, 6.03% Director)</li>
+                  <li><strong>Line Chart</strong> — Movie Count by Release Year (trend from ~2013 to 2022, peaking at 1026 in ~2021)</li>
+                  <li><strong>Slicer Panel</strong> — filters for Age Certification, Released Year, Type, Countries, Name, Imdb Score range, Tmdb Score range</li>
+                </ul>
+                <p class="story-purpose">
+                  <strong>Purpose:</strong> Gives a high-level snapshot of Netflix's movie catalog — how content is age-rated, who dominates the cast/crew roles, and how movie releases have trended over time.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-step story-step-right">
+              <div class="story-copy">
+                <h3>Netflix Dashboard - Page 2: Release Trends &amp; Global Reach</h3>
+                <ul>
+                  <li><strong>Bar Chart</strong> — Movie Count by Released Year (2014–2022)</li>
+                  <li><strong>Map (Bubble Map)</strong> — geographic distribution of movies by country, bubble size = count (North America and Europe dominate)</li>
+                  <li><strong>Table</strong> — Movie Title, Role, and Name (cast/crew list)</li>
+                </ul>
+                <p class="story-purpose">
+                  <strong>Purpose:</strong> Shows where Netflix content is produced/set and when it was released, with rich drill-down tooltips for deeper metrics without cluttering the main view.
+                </p>
+              </div>
+              <div class="story-media">
+                <img src="Dashboard 02/netflix page 2.png" alt="Netflix dashboard page two — Release Trends and Global Reach" />
+              </div>
+            </article>
+
+            <article class="story-step story-step-left">
+              <div class="story-media">
+                <img src="Dashboard 02/spotify page 1.png" alt="Spotify dashboard — Track and Artist Analysis" />
+              </div>
+              <div class="story-copy">
+                <h3>Spotify Dashboard - Page 3: Track &amp; Artist Analysis</h3>
+                <ul>
+                  <li><strong>KPI Cards (5)</strong> — Total Popularity, Total Duration (ms), Total Tempo, Total Time Signature, Total Mode</li>
+                  <li><strong>Bar Chart</strong> — Track Count by Artists (Top 10 artists by track count — The Beatles, George Jones, Stevie Wonder, etc.)</li>
+                  <li><strong>Line Chart</strong> — Total Tempo and Total Loudness by Album (dual-metric trend comparison across albums)</li>
+                  <li><strong>Table</strong> — Track Genre broken down by Danceability, Energy, and Liveness (with totals row)</li>
+                  <li><strong>Slicer Panel</strong> — filters for Album Name, Artists, Track Genre, Track Name, Tempo range, Popularity range</li>
+                </ul>
+                <p class="story-purpose">
+                  <strong>Purpose:</strong> Breaks down music characteristics (tempo, energy, danceability, loudness) by artist, album, and genre — useful for spotting which genres/artists trend toward high-energy vs mellow tracks.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-section">
+        <div class="container">
+          <div class="showcase-section-heading">
+            <h2>Micro-views that enrich the dashboard</h2>
+          </div>
+          <div class="showcase-tooltip-grid">
+            <article class="showcase-tile">
+              <img src="Dashboard 02/Tooltip 1.png" alt="Bar chart tooltip — content type breakdown" />
+              <h4>Tooltip 1 — Content type breakdown</h4>
+              <p>Hovering a bar chart column reveals a mini stacked breakdown by content Type (Movie vs Show counts side-by-side).</p>
+            </article>
+            <article class="showcase-tile">
+              <img src="Dashboard 02/Tooltip 2.png" alt="Map bubble tooltip — aggregated metrics" />
+              <h4>Tooltip 2 — Geographic metric tooltip</h4>
+              <p>Hovering a map bubble reveals Imdb Votes, Imdb Score, Tmdb Popularity, and Tmdb Score as an aggregated tooltip table.</p>
+            </article>
+            <article class="showcase-tile">
+              <img src="Dashboard 02/Tooltip 3.png" alt="Table row tooltip — movie synopsis" />
+              <h4>Tooltip 3 — Title synopsis tooltip</h4>
+              <p>Hovering a movie title in the table reveals its description/synopsis as a tooltip popup.</p>
+            </article>
+            <article class="showcase-tile">
+              <img src="Dashboard 02/Tooltip 4.png" alt="Artist bar tooltip — danceability by genre" />
+              <h4>Tooltip 4 — Artist danceability tooltip</h4>
+              <p>Hovering an artist bar reveals a ranked mini bar chart of Danceability by Track Genre for that artist's tracks.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const toggleButton = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const body = document.body;
+
+      function updateToggleIcon(open) {
+        toggleButton.innerHTML = open
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+      }
+
+      toggleButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        body.classList.toggle('menu-open', isOpen);
+        updateToggleIcon(isOpen);
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          body.classList.remove('menu-open');
+          updateToggleIcon(false);
+        });
+      });
+    </script>
+  </body>
+</html>
