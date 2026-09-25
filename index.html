@@ -98,9 +98,9 @@
         <div class="container hero-layout">
           <div class="hero-main">
             <p class="eyebrow">Aspiring Data Engineer · Data Science Undergraduate</p>
-            <h1>
-              Janushiya
-              <span class="highlight">Rajakumar</span>
+            <h1 class="typing-name" aria-label="Janushiya Rajakumar">
+              <span class="typing-part">Janushiya</span>
+              <span class="highlight typing-part">Rajakumar</span>
             </h1>
             <p class="hero-subtitle">
               I’m an aspiring Data Engineer with a strong foundation in data science,
@@ -934,6 +934,39 @@ for enterprise-wide reporting and analytics.
     </footer>
 
     <script>
+      const typingName = document.querySelector(".typing-name");
+      const typingParts = typingName.querySelectorAll(".typing-part");
+      const prefersReducedTypingMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+
+      if (!prefersReducedTypingMotion.matches) {
+        const typingTexts = Array.from(typingParts, (part) => part.textContent);
+        let partIndex = 0;
+        let characterIndex = 0;
+
+        typingParts.forEach((part) => {
+          part.textContent = "";
+        });
+
+        function typeNameCharacter() {
+          if (partIndex >= typingParts.length) return;
+
+          const currentPart = typingParts[partIndex];
+          currentPart.textContent += typingTexts[partIndex][characterIndex];
+          characterIndex += 1;
+
+          if (characterIndex >= typingTexts[partIndex].length) {
+            partIndex += 1;
+            characterIndex = 0;
+          }
+
+          window.setTimeout(typeNameCharacter, 180);
+        }
+
+        window.setTimeout(typeNameCharacter, 350);
+      }
+
       // Keep the footer year up to date
       const yearSpan = document.getElementById("year");
       if (yearSpan) {
