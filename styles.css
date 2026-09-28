@@ -1519,18 +1519,87 @@ h1 {
 }
 
 .edu-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.4rem;
 }
 
 .edu-card {
+  position: relative;
+  z-index: 1;
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 1.1rem 1.2rem 1.2rem;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* EDUCATION ANIMATION */
+#education {
+  position: relative;
+  overflow: hidden;
+}
+
+#education.visible .edu-card {
+  animation: education-card-in 0.6s ease-out both;
+}
+
+#education.visible .edu-card:nth-child(1) { animation-delay: 0s; }
+#education.visible .edu-card:nth-child(2) { animation-delay: 0.3s; }
+#education.visible .edu-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes education-card-in {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.education-symbols {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  width: calc(50% - 0.7rem);
+  pointer-events: none;
+  z-index: 0;
+  color: #1f9d55;
+  opacity: 0.3;
+  font-size: 22px;
+}
+
+.education-symbols span {
+  position: absolute;
+  animation: education-symbol-float 6s ease-in-out infinite;
+}
+
+.education-symbols span:nth-child(1) {
+  top: 18%;
+  left: 28%;
+  animation-delay: -1s;
+}
+
+.education-symbols span:nth-child(2) {
+  top: 52%;
+  left: 68%;
+  animation-delay: -3s;
+}
+
+.education-symbols span:nth-child(3) {
+  top: 76%;
+  left: 38%;
+  animation-delay: -4.5s;
+}
+
+@keyframes education-symbol-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .edu-logo {
@@ -1550,9 +1619,28 @@ h1 {
 }
 
 .edu-card:hover {
-  transform: translateY(-3px);
+  translate: 0 -3px;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
   border-color: rgba(148, 163, 184, 0.9);
+}
+
+@media (max-width: 960px) {
+  .education-symbols {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #education .edu-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .education-symbols span {
+    animation: none;
+  }
 }
 
 .edu-meta {
