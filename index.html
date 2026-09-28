@@ -468,9 +468,23 @@ for enterprise-wide reporting and analytics.
       </section>
 
       <section id="projects" class="section section-alt reveal reveal-delay-1">
+        <svg class="projects-network" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <g class="network-lines" fill="none" stroke="#8fdcae" stroke-width="1.5" stroke-dasharray="4 4">
+            <path d="M90 120 310 300 500 150 700 380 900 210 740 720 330 650 500 150" />
+          </g>
+          <g class="network-nodes" fill="#1f9d55">
+            <circle class="network-node node-one" cx="90" cy="120" r="3" />
+            <circle class="network-node node-two" cx="310" cy="300" r="3" />
+            <circle class="network-node node-three" cx="500" cy="150" r="3" />
+            <circle class="network-node node-four" cx="700" cy="380" r="3" />
+            <circle class="network-node node-five" cx="900" cy="210" r="3" />
+            <circle class="network-node node-six" cx="740" cy="720" r="3" />
+          </g>
+        </svg>
         <div class="container">
           <div class="section-header">
             <h2>Projects</h2>
+            <span class="projects-medallion-bar" aria-hidden="true"></span>
             <p>
               A selection of academic and personal projects that showcase my experience in data engineering, analytics, machine learning, and NLP, and how I approach real-world problem solving with data.
             </p>
@@ -656,6 +670,63 @@ for enterprise-wide reporting and analytics.
       </section>
 
       <section id="dashboards" class="section reveal reveal-delay-1">
+        <span class="dashboard-mini-chart chart-top-left" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M4 33.5h30" fill="none" stroke="#d3e4da" stroke-width="1.5" />
+            <rect x="7" y="20" width="6" height="13" rx="1" fill="#8fdcae" />
+            <rect x="16" y="12" width="6" height="21" rx="1" fill="#1f9d55" />
+            <rect x="25" y="6" width="6" height="27" rx="1" fill="#f2b8a5" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-top-right" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M19 19V4a15 15 0 0 1 13.4 8.3L19 19Z" fill="#1f9d55" />
+            <path d="m19 19 13.4-6.7A15 15 0 0 1 22.9 33.6L19 19Z" fill="#f2b8a5" />
+            <path d="m19 19 3.9 14.6A15 15 0 0 1 19 4v15Z" fill="#8fdcae" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-left-edge" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <circle cx="19" cy="19" r="12" fill="none" stroke="#8fdcae" stroke-width="6" />
+            <circle cx="19" cy="19" r="12" fill="none" stroke="#1f9d55" stroke-width="6" stroke-dasharray="28 48" transform="rotate(-90 19 19)" />
+            <circle cx="19" cy="19" r="12" fill="none" stroke="#f2b8a5" stroke-width="6" stroke-dasharray="12 64" stroke-dashoffset="-30" transform="rotate(-90 19 19)" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-right-edge" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M5 32V6M5 32h29" fill="none" stroke="#d3e4da" stroke-width="1.5" />
+            <path d="m8 26 7-8 6 4 10-12" fill="none" stroke="#1f9d55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="15" cy="18" r="2" fill="#8fdcae" />
+            <circle cx="21" cy="22" r="2" fill="#f2b8a5" />
+            <circle cx="31" cy="10" r="2" fill="#1f9d55" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-open-one" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M4 33.5h30" fill="none" stroke="#d3e4da" stroke-width="1.5" />
+            <rect x="6" y="23" width="5" height="10" rx="1" fill="#f2b8a5" />
+            <rect x="13" y="16" width="5" height="17" rx="1" fill="#1f9d55" />
+            <rect x="20" y="9" width="5" height="24" rx="1" fill="#8fdcae" />
+            <rect x="27" y="5" width="5" height="28" rx="1" fill="#1f9d55" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-open-two" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M19 19V4a15 15 0 0 1 14.5 11.2L19 19Z" fill="#f2b8a5" />
+            <path d="m19 19 14.5-3.8A15 15 0 0 1 11.5 31.9L19 19Z" fill="#1f9d55" />
+            <path d="M19 19 11.5 31.9A15 15 0 0 1 19 4v15Z" fill="#8fdcae" />
+          </svg>
+        </span>
+        <span class="dashboard-mini-chart chart-open-three" aria-hidden="true">
+          <svg viewBox="0 0 38 38" focusable="false">
+            <path d="M5 32V6M5 32h29" fill="none" stroke="#d3e4da" stroke-width="1.5" />
+            <circle cx="11" cy="25" r="2.5" fill="#1f9d55" />
+            <circle cx="16" cy="13" r="2.5" fill="#f2b8a5" />
+            <circle cx="21" cy="22" r="2.5" fill="#8fdcae" />
+            <circle cx="27" cy="9" r="2.5" fill="#1f9d55" />
+            <circle cx="30" cy="27" r="2.5" fill="#f2b8a5" />
+          </svg>
+        </span>
         <div class="container">
           <div class="section-header">
             <h2>Dashboards</h2>
@@ -755,6 +826,9 @@ for enterprise-wide reporting and analytics.
       </section>
 
       <section id="certifications" class="section reveal reveal-delay-2">
+        <span class="certifications-award" aria-hidden="true">
+          <i class="fa-solid fa-award"></i>
+        </span>
         <div class="container">
           <h2>Certifications</h2>
           <div class="cert-grid">
@@ -812,6 +886,9 @@ for enterprise-wide reporting and analytics.
       </section>
 
       <section id="contact" class="section contact-section reveal reveal-delay-1">
+        <span class="contact-plane-track" aria-hidden="true">
+          <i class="fa-solid fa-paper-plane contact-plane"></i>
+        </span>
         <div class="container contact-layout">
           <div>
             <h2>Let’s build something with data</h2>
@@ -821,7 +898,7 @@ for enterprise-wide reporting and analytics.
               <div class="contact-details">
               <div>
                 <span class="label">Email</span>
-                <a href="mailto:rajakumarjanu@gmail.com">rajakumarjanu@gmail.com</a>
+                <a class="contact-email" href="mailto:rajakumarjanu@gmail.com">rajakumarjanu@gmail.com</a>
               </div>
               <div class="contact-links">
                 <a
